@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewBag.Title = "AddWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Kullanıcı Ekle</h1>
+<br />
+@using (Html.BeginForm("AddWriter", "Writer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UserName)
+        <br />
+        @Html.Label("Hakkımda")
+        @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterAbout)
+        <br />
+        @Html.Label("Mail")
+        @Html.TextBoxFor(x => x.UserMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UserMail)
+        <br />
+        @Html.Label("Şifre")
+        @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UserPassword)
+        <br />
+        @Html.Label("Unvan")
+        @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterTitle)
+        <br />
+        <button class="btn btn-info">Ekle</button>
+    </div>
+}
+
